@@ -18,8 +18,11 @@
         ws.StartServer()
 
         LogEvent("Server Running at " + RootPath + "...", ConsoleColor.Green)
-        LogEvent("Press any key to stop...")
-        Console.ReadKey()
+        LogEvent("Type 'stop' to terminate the server.")
+        While Console.ReadLine.ToLower <> "stop"
+            LogEvent("Input not recognized. Type 'stop' to terminate the server.")
+        End While
+
         ws.StopServer()
         ws = Nothing
         LogEvent("Press any key to close...")
